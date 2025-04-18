@@ -1,0 +1,16 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to the SF Restaurant Expert System</h2>
+<p>This system will help you find the perfect restaurant near Minerva's residence hall in San Francisco based on your preferences.</p>
+<p>You'll be asked about meal type, cuisine, dietary needs, price range, atmosphere, distance, service style, group size, and noise level to find your ideal match.</p>
+
+<form action="{{ url_for('location') }}" method="post">
+    <h2>First, are you currently in San Francisco?</h2>
+    <div class="btn-container">
+        <button type="submit" name="location" value="yes" class="btn">Yes, I am</button>
+        <button type="submit" name="location" value="no" class="btn btn-secondary">No, I'm elsewhere</button>
+    </div>
+</form>
+{% endblock %}

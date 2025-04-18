@@ -1,0 +1,17 @@
+<!-- templates/redirect.html -->
+{% extends "base.html" %}
+
+{% block extra_head %}
+<meta http-equiv="refresh" content="0;url={{ url_for(endpoint) }}">
+<script>
+    // Redirect the browser to the correct endpoint while preserving the domain
+    window.location.href = "{{ url_for(endpoint) }}";
+</script>
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+    <p>Redirecting you...</p>
+    <p>If you are not redirected automatically, <a href="{{ url_for(endpoint) }}">click here</a>.</p>
+</div>
+{% endblock %}

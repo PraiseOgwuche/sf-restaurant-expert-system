@@ -1,0 +1,17 @@
+<!-- templates/recommendation.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recommendation">
+    <h2>Your Perfect Restaurant Match</h2>
+    
+    {% set parts = restaurant.split(': ') %}
+    <h3><a href="{{ parts[1] }}" target="_blank">{{ parts[0] }}</a></h3>
+    
+    <p class="note">Click the restaurant name to view on Google Maps</p>
+    
+    <div class="btn-container">
+        <a href="{{ url_for('index') }}" class="btn" style="background-color: var(--primary-color); color: var(--white);">Start Over</a>
+    </div>
+</div>
+{% endblock %}

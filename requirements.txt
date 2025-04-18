@@ -1,0 +1,6 @@
+pyswip==0.2.10
+numpy
+pylcs
+flask==2.0.1
+werkzeug==2.0.1
+colorama==0.4.6

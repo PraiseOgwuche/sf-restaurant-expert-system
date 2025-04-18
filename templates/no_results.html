@@ -1,0 +1,13 @@
+<!-- templates/no_results.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recommendation">
+    <h2>No Matching Restaurants</h2>
+    <p>{{ message }}</p>
+    
+    <div class="btn-container">
+        <a href="{{ url_for('index') }}" class="btn" style="background-color: var(--primary-color); color: var(--white);">Start Over</a>
+    </div>
+</div>
+{% endblock %}

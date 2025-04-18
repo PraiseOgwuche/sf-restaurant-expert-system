@@ -1,0 +1,47 @@
+<!-- templates/question.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Step indicator -->
+<div class="step-indicator">
+    {% for i in range(9) %}
+        {% if i < session.get('q_index', 0) %}
+            <div class="step completed">✓</div>
+        {% elif i == session.get('q_index', 0) %}
+            <div class="step active">{{ i+1 }}</div>
+        {% else %}
+            <div class="step">{{ i+1 }}</div>
+        {% endif %}
+        
+        {% if i < 8 %}
+            {% if i < session.get('q_index', 0) %}
+                <div class="step-line active"></div>
+            {% else %}
+                <div class="step-line"></div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+<h2>{{ question.text }}</h2>
+
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+<form method="post">
+    {% for opt in question.options %}
+    <div class="option-card">
+        <label>
+            <input type="radio" name="option" value="{{ opt }}"> 
+            {{ opt.replace('_', ' ').capitalize() }}
+        </label>
+    </div>
+    {% endfor %}
+    
+    <div class="btn-container">
+        {% if session.get('q_index', 0) > 0 %}
+        <button type="button" onclick="window.location.href='{{ url_for('previous_question') }}';" class="btn btn-secondary">Previous</button>
+        {% endif %}
+        <button type="submit" class="btn">Next</button>
+    </div>
+</form>
+{% endblock %}

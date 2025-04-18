@@ -1,0 +1,236 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF Restaurant Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc05;
+            --danger-color: #ea4335;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: var(--dark-gray);
+            font-size: 16px;
+        }
+        
+        h2 {
+            color: var(--text-color);
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            min-width: 120px; /* Ensure buttons have a minimum width */
+        }
+        
+        .btn:hover {
+            background-color: #3b77db;
+        }
+        
+        .btn-secondary {
+            background-color: var(--medium-gray);
+            color: var(--text-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #cccccc;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: var(--white);
+        }
+        
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .btn-container .btn {
+            margin: 0 5px;
+            min-width: 120px; /* Consistent button width */
+        }
+        
+        .option-card {
+            border: 2px solid var(--medium-gray);
+            border-radius: var(--radius);
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+        
+        .option-card input {
+            margin-right: 10px;
+        }
+        
+        .option-card label {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+        
+        .error {
+            color: var(--danger-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            background-color: var(--medium-gray);
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .step.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .step.completed {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .step-line {
+            flex: 1;
+            height: 3px;
+            background-color: var(--medium-gray);
+            margin: 0 5px;
+            align-self: center;
+        }
+        
+        .step-line.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .recommendation {
+            text-align: center;
+        }
+        
+        .recommendation h3 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        .recommendation a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .recommendation a:hover {
+            text-decoration: underline;
+        }
+        
+        .note {
+            color: var(--dark-gray);
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SF Restaurant Recommender</h1>
+            <p>Find your perfect dining experience in San Francisco</p>
+        </div>
+        
+        <div class="card">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
