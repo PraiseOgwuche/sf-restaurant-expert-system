@@ -71,10 +71,13 @@ pip install -r requirements.txt
 
 ### 4. Install SWI-Prolog
 
-- **macOS**: `brew install swi-prolog`
-- **Ubuntu/Debian**: `sudo apt-get install swi-prolog`
-- **Windows**: [Download here](https://www.swi-prolog.org/download/stable)
-
+- **Codespaces**:
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y swi-prolog
+- **macOS**: `brew install swi-prolog`  
+- **Ubuntu/Debian**: `sudo apt-get install swi-prolog`  
+- **Windows**: [Download here](https://www.swi-prolog.org/download/stable)  
 ---
 
 ## 🚀 Usage
@@ -97,7 +100,7 @@ http://localhost:5000
 
 ---
 
-## 💻 Command-Line Version (Optional)
+## 💻 Command-Line Version
 
 Run the logic via CLI using:
 
@@ -109,7 +112,7 @@ python recommender.py
 
 ## ✅ Extension Implementations
 
-This project implements all three possible extensions:
+This project implements all extensions:
 
 - **Menu-based responses**: Selectable options via buttons or radio inputs  
 - **Natural language questions**: Intuitive, user-friendly prompts  
@@ -135,13 +138,15 @@ The Prolog KB (`kb.pl`) defines restaurants with attributes like:
 
 ## 🧪 Test Cases (All Pass ✅)
 
-| Test # | Description                         | Expected Result                  |
-|--------|-------------------------------------|----------------------------------|
-| 1      | **Breakfast at Tratto**             | Tratto                           |
-| 2      | **Lunch at Raavi**                  | Raavi North Indian Cuisine       |
-| 3      | **Quick Vegan Lunch at Mr. Charlie’s** | Mr. Charlie's                    |
-| 4      | **Upscale Seafood Dinner**          | Scoma's Restaurant               |
+| Test # | Description                                | Expected Result                  |
+|--------|--------------------------------------------|----------------------------------|
+| 1      | **Breakfast at Tratto**                    | Tratto                           |
+| 2      | **Lunch at Raavi**                         | Raavi North Indian Cuisine       |
+| 3      | **Quick Vegan Lunch at Mr. Charlie’s**     | Mr. Charlie's                    |
+| 4      | **Upscale Seafood Dinner**                 | Scoma's Restaurant               |
 | 5      | **No Match** (e.g., Thai + Breakfast + Upscale) | No matching restaurant found     |
+| 6      | **Casual Lunch at Burger King**            | Burger King                      |
+
 
 ---
 
@@ -151,7 +156,7 @@ The Prolog KB (`kb.pl`) defines restaurants with attributes like:
   📧 praiseogwuche@uni.minerva.edu  
 - **Mohamed Abdelrazek** – *System Design & Data Collection*  
   📧 mohamed@uni.minerva.edu  
-- **Nuray Nurkhojayeva** – *Testing & Real-world Validation*  
+- **Nuray Nurkhojayeva** – *Testing, Expert system Visualization & Real-world Validation*  
   📧 nuray.nurkhojayeva@uni.minerva.edu
 
 ---
@@ -163,4 +168,4 @@ This project was developed as part of:
 > **CS152: Harnessing Artificial Intelligence Algorithms**  
 > **Minerva University, Spring 2025**
 
-Special thanks to the course team for guidance and feedback!
+Special thanks to Professor Shekhar for guidance and feedback!

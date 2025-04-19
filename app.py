@@ -91,6 +91,41 @@ questions = [
     }
 ]
 
+'''
+
+# Function to determine if a question should be skipped based on previous answers
+def should_skip_question(question, answers):
+    """
+    Determine if a question should be skipped based on previous answers.
+    Returns True if the question should be skipped, False otherwise.
+    """
+    attribute = question['attribute']
+    
+    # Skip diet question if cuisine is seafood
+    if attribute == 'diet' and answers.get('cuisine') == 'seafood':
+        # Automatically set diet to standard for seafood
+        answers['diet'] = 'standard'
+        return True
+        
+    # Skip noise level question if atmosphere is quiet
+    # (since quiet atmosphere implies quiet noise level)
+    if attribute == 'noise' and answers.get('atmosphere') == 'quiet':
+        # Automatically set noise to quiet
+        answers['noise'] = 'quiet'
+        return True
+    
+    # Skip service_style question if meal_type is breakfast
+    # (since most breakfast places are dine_in)
+    if attribute == 'service_style' and answers.get('meal_type') == 'breakfast':
+        # Auto-set service_style to dine_in for breakfast
+        answers['service_style'] = 'dine_in'
+        return True
+        
+    # Add more conditional logic as needed
+    
+    return False
+'''
+
 # Updated restaurant URL mappings
 restaurant_urls = {
     'raavi': "https://maps.app.goo.gl/8ov6JTFxY5rExqmv5",
