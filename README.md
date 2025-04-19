@@ -1,5 +1,6 @@
 
 # San Francisco Restaurant Recommender
+![Screenshot 2025-04-19 at 3 04 11 PM](https://github.com/user-attachments/assets/f38a3cc5-39c9-43d0-b4a6-b5a151f248b8)
 
 ## Overview
 
